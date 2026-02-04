@@ -28,11 +28,13 @@ export function CampaignCard({ campaign }: CampaignCardProps) {
   return (
     <div
       className="card w-full bg-base-100 shadow-md border border-base-300 hover:shadow-lg hover:border-primary/30 cursor-pointer transition-all duration-200"
-      onClick={() => navigate(`/campaigns/${campaign.id}`)}
+      onClick={() => navigate(`/campaigns/${campaign._id}`)}
     >
       <div className="card-body p-5">
         <div className="flex items-start justify-between gap-2 mb-2">
-          <h2 className="card-title text-lg text-base-content">{campaign.name}</h2>
+          <h2 className="card-title text-lg text-base-content">
+            {campaign.name}
+          </h2>
           <span className={`badge shrink-0 ${statusVariants[campaign.status]}`}>
             {statusLabels[campaign.status]}
           </span>
